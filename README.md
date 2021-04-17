@@ -8,7 +8,7 @@ Control Philips WiZ Connected Turnable White smart light bulbs
 - [pywizlight](https://github.com/sbidy/pywizlight)
 
 ## Installation
-    `pip install git+https://github.com/ariqfadlan/wizcon.git`
+    pip install git+https://github.com/ariqfadlan/wizcon.git
 
 ## Usage
 ```
