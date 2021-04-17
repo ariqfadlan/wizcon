@@ -1,18 +1,20 @@
 # wizcon
-Control Philips WiZ Connected smart light bulbs
+Control Philips WiZ Connected Turnable White smart light bulbs
+
+**This fork supports Turnable White variant only**
 
 ## Requirements
-- [Python 3](https://www.python.org/downloads/)
+- [Python 3.7 or higher](https://www.python.org/downloads/)
 - [pywizlight](https://github.com/sbidy/pywizlight)
 
 ## Installation
-    pip install wizcon
+    `pip install git+https://github.com/ariqfadlan/wizcon.git`
 
 ## Usage
 ```
-usage: wizcon [-h] [-si {1-32}] [-b {0-255}] IP {ON,OFF,SWITCH}
+usage: wizcon.py [-h] [-si 6 | {9,16} | 18 | {29-32}] [-b {0-255}] IP {ON,OFF,SWITCH}
 
-Control Philips WiZ Connected smart light bulbs
+Control Philips WiZ Connected Turnable White smart bulb
 
 positional arguments:
   IP                    IP address of smart bulb
@@ -20,20 +22,13 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -si {1-32}, --scene_id {1-32}
+  -si 6 | {9,16} | 18 | {29-32}, --scene_id 6 | {9,16} | 18 | {29-32}
                         Set scene of smart bulb using scene ID
   -b {0-255}, --brightness {0-255}
                         Set brightness of smart bulb
 
 Scene Table
-1: "Ocean"
-2: "Romance"
-3: "Sunset"
-4: "Party"
-5: "Fireplace"
 6: "Cozy"
-7: "Forest"
-8: "Pastel Colors"
 9: "Wake up"
 10: "Bedtime"
 11: "Warm White"
@@ -42,18 +37,7 @@ Scene Table
 14: "Night light"
 15: "Focus"
 16: "Relax"
-17: "True colors"
 18: "TV time"
-19: "Plantgrowth"
-20: "Spring"
-21: "Summer"
-22: "Fall"
-23: "Deepdive"
-24: "Jungle"
-25: "Mojito"
-26: "Club"
-27: "Christmas"
-28: "Halloween"
 29: "Candlelight"
 30: "Golden white"
 31: "Pulse"
@@ -62,23 +46,26 @@ Scene Table
 Examples
 
 Turn smart bulb on:
-wizcon 192.168.1.100 ON
+python3 wizcon.py 192.168.1.100 ON
 
 Turn smart bulb off:
-wizcon 192.168.1.100 OFF
+python3 wizcon.py 192.168.1.100 OFF
 
 Switch smart bulb between on and off states:
-wizcon 192.168.1.100 SWITCH
+python3 wizcon.py 192.168.1.100 SWITCH
 
-Set scene to "Deepdive" using scene ID:
-wizcon 192.168.1.100 ON --scene_id 23
+Set scene to "Focus" using scene ID:
+python3 wizcon.py 192.168.1.100 ON --scene_id 16
+
+Set brightness to 255 (max brightness):
+python3 wizcon.py 192.168.1.100 ON --brightness 255
 ```
 
 ## Source code
-https://github.com/rgomezjnr/wizcon
+https://github.com/ariqfadlan/wizcon
 
 ## Author
 [Robert Gomez, Jr.](https://github.com/rgomezjnr)
 
 ## License
-[MIT](https://github.com/rgomezjnr/wizcon/blob/master/LICENSE.txt)
+[MIT](LICENSE.txt)
